@@ -4,14 +4,14 @@ import java.util.regex.Pattern;
 
 public class App {
     public static void main(String[] args) {
-        final String regex = "[a-zA-Z]{2,}\\s[a-zA-Z]{2,}";
+        
+        final String regex = "(^[a-zA-Z]{2,})+\\s+([a-zA-Z]{2,})+$";
         final List<String> fullNames = List.of(
             "John Smith",
             "Jane Doe", 
             "Mary Jane",
             "Alexandra Al&ex",
-            "Elizabeth Smith",
-            "Igor Rhamon C do Nas"
+            "Elizabeth Smith"
         );
         final Matcher[] matchers = fullNames.stream()
                 .map(name -> Pattern.compile(regex).matcher(name))
